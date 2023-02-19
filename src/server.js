@@ -1,12 +1,16 @@
-const express = require("express");
+//const express = require("express");
+import express from "express"
+import configViewEngine from "./configs/viewEngine";
+require('dotenv').config();
 const app = express();
-const port = 8080;
+const port = process.env.port || 3000;
 const path = require('path')
+configViewEngine(app)
 app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname,"../index.html"));
+	res.render("index.ejs");
 });
 app.get("/about", (req, res) => {
-	res.send("about page");
+	res.send(`listen to ${port}`)
 });
 
 app.listen(port, () => {
