@@ -1,5 +1,7 @@
 $ npm init --yes
+
 $ npm install --save exress body-parser cors
+
 $ npm install @babel/core @babel/node --save-dev
 
 .babelrc
