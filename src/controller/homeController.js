@@ -10,7 +10,7 @@ let getHomePage = (req, res) => {
 		//console.log(fields); // fields contains extra meta data about results, if available
 	});
 	//viet logic here
-
+	///them hang o day
 	
 };
 module.exports = {

@@ -10,6 +10,7 @@ const initWebRoute = (app) => {
     // router.get("/", (req, res) => {
 	// 	res.render("index.ejs");
 	// });
+	///
 	router.get("/about", (req, res) => {
 		res.send(`listen to port ${process.env.PORT}`);
 	});
