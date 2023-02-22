@@ -10,6 +10,8 @@ let getHomePage = async (req, res) => {
 	// 	//console.log(fields); // fields contains extra meta data about results, if available
 	// });
 	//viet logic here
+
+	
 };
 module.exports = {
 	getHomePage,
