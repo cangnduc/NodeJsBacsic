@@ -1,5 +1,12 @@
 import connection from "../configs/connectDB";
-
+let getUserDetail = async (req,res) => {
+	const [rows, fields] = await connection.execute("SELECT * from `users` where ID =?",[req.params.userID]);
+	console.log(rows)
+	return res.send(req.params.userID)
+}
+let createNewUser = (req,res)=> {
+	return res.send("da nhan tin hieu")
+}
 let getHomePage = async (req, res) => {
 	const [rows, fields] = await connection.execute("SELECT * from `users`");
 	// connection.query("SELECT * FROM `users`", function (err, results, fields) {
@@ -14,5 +21,5 @@ let getHomePage = async (req, res) => {
 	
 };
 module.exports = {
-	getHomePage,
+	getHomePage,getUserDetail,createNewUser
 };

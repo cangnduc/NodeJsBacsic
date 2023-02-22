@@ -6,6 +6,11 @@ require("dotenv").config();
 const app = express();
 const port = process.env.port || 3000;
 const path = require("path");
+
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // set up view engine
 configViewEngine(app);
 // init web route

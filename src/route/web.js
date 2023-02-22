@@ -11,6 +11,8 @@ const initWebRoute = (app) => {
 	// 	res.render("index.ejs");
 	// });
 	///
+	router.post("/create-new-user",homeController.createNewUser)
+	router.get("/detail/user/:userID",homeController.getUserDetail);
 	router.get("/about", (req, res) => {
 		res.send(`listen to port ${process.env.PORT}`);
 	});
