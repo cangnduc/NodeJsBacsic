@@ -11,6 +11,11 @@ const initWebRoute = (app) => {
 	// 	res.render("index.ejs");
 	// });
 	///
+	// GET POST PUT DELETE
+	//  R    C   U    D
+	router.post('/update-user',homeController.updateUser)
+	router.get("/edit/user/:userID",homeController.editUser)
+	router.post("/delete-user",homeController.deleteUser)
 	router.post("/create-new-user",homeController.createNewUser)
 	router.get("/detail/user/:userID",homeController.getUserDetail);
 	router.get("/about", (req, res) => {

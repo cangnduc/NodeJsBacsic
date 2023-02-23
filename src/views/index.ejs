@@ -30,6 +30,7 @@
 					  <th>Firstname</th>
 					  <th>Lastname</th>
 					  <th>Email</th>
+					  <th>address</th>
 					  <th>Action</th>
 					</tr>
 					<% for (let i=0; i < userData.length;i++) { %>
@@ -38,8 +39,15 @@
 					  <td><%= userData[i].firstName %></td>
 					  <td><%= userData[i].lastName %></td>
 					  <td><%= userData[i].email %></td>
-					  <td>
-						<a class="btn btn-primary" href="/detail/user/<%= userData[i].ID %>" target="_blank"> Detail</a>
+					  <td><%= userData[i].address %></td>
+					  <td class="btn-display">
+						<a class="btn btn-primary" href="/detail/user/<%= userData[i].ID %>"> Detail</a>
+						<a class="btn btn-success" href="/edit/user/<%= userData[i].ID %>"> Edit</a>
+						
+						<form action="/delete-user" method="post">
+							<input type="text" hidden name="userID" value="<%= userData[i].ID %>" />
+							<button class="btn btn-danger"> Delete</button></form>
+						
 					  </td>
 					</tr>
 					<% } %>
@@ -60,7 +68,11 @@
 						  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
 						</div>
 						
-						
+						<div class="mb-3 mt-3">
+							<label for="address" class="form-label">Address:</label>
+							<input type="text" class="form-control" id="address" placeholder="Enter address" name="address">
+						  </div>
+						  
 						<button type="submit" class="btn btn-primary">Submit</button>
 					  </form>
 				  </div>
