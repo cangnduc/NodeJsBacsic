@@ -39,3 +39,13 @@ li a:hover:not(.active) {
 	display: flex;
 	gap: 5px
 }
+.right-side {
+	display: flex;
+	gap: 15px;
+	
+	align-items: center;
+}
+.search-input{
+	
+	height: 30px;
+}
